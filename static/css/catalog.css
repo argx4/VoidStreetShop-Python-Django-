@@ -130,13 +130,16 @@ footer {
   .card-container {
     gap: 20px;
     padding: 10px;
-    margin-left: -140px;
+    display: flex;
+    justify-content: center;
   }
 
-  .card {
+  .card-container .card {
     width: 100%;
     max-width: 400px;
     margin: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
   }
 
   .card img {
@@ -161,11 +164,16 @@ footer {
   .card-container {
     gap: 25px;
     padding: 15px;
+    display: flex;
+    justify-content: center;
   }
 
-  .card {
+  .card-container .card {
     width: 95%;
     max-width: 450px;
+    margin: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
   }
 
   .card img {
@@ -190,11 +198,16 @@ footer {
   .card-container {
     gap: 30px;
     padding: 20px;
+    display: flex;
+    justify-content: center;
   }
 
-  .card {
+  .card-container .card {
     width: 90%;
     max-width: 500px;
+    margin: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
   }
 
   .card img {
