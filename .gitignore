@@ -43,7 +43,6 @@ ENV/
 Thumbs.db
 
 # Project specific
-static/media/
 static/admin/
 static_root/
 media_root/
