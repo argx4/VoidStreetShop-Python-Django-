@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+
+<link rel="stylesheet" href="{% static 'css/contact.css' %}">    
+
+
+{% endblock %}
+
+{% block content %}
+<main>
+    <div class="contactinf">
+        <div class="card mb-3" style="max-width: 540px;">
+            <div class="row g-0">
+                <div class="col-md-4">
+                    <img src="https://i.ibb.co/rv86Jq5/03cf1b0a659cb6f3e06b257137f79ead.jpg" class="img-fluid rounded-start" alt="...">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">Наш Instagram</h5>
+                        <p class="card-text">Відгуки/фотозвіти роботи</p>
+                        <p class="card-text"></p>
+                        <a href="https://www.instagram.com/voidstreet_studio/?utm_source=qr&igsh=bTU0dHNta2hhaHdv#" class="btn btn-dark" target="_blank">Перейти</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card mb-3" style="max-width: 540px;">
+            <div class="row g-0">
+                <div class="col-md-4">
+                    <img src="https://i.ibb.co/kvZX6Xz/images.png" alt="images" class="img-fluid rounded-start" alt="...">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">Профіль Shafa</h5>
+                        <p class="card-text">Ще більше речей</p>
+                        <p class="card-text"></p>
+                        <a href="https://shafa.ua/member/liliana_67" class="btn btn-dark" target="_blank">Перейти</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock %}  

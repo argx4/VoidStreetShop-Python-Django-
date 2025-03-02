@@ -1,0 +1,335 @@
+/* Стили для внутренней страницы продукта */
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.card1 {
+  margin-top: 20px;
+}
+
+.carusel2 {
+  margin-top: -10px;
+}
+
+
+.carousel-item.active img {
+  width: 100%;
+  height: 520px;
+}
+
+.carousel-item img {
+  width: 100%;
+  height: 520px;
+}
+
+
+.card-body {
+  padding: 20px;
+}
+
+.card-title1 {
+  margin-top: 20px;
+  font-size: 1.5rem;
+  color: rgb(184, 178, 178);
+}
+
+.card-text1 {
+  margin-top: 20px;
+  font-size: 1rem;
+  color: rgb(184, 178, 178);
+}
+
+.viborrazmera {
+  margin-top: 20px;
+  color: rgb(184, 178, 178);
+}
+
+.viborrazmera2 {
+  margin-top: 20px;
+}
+
+select {
+  background-color: #1a1621;
+  color: rgb(184, 178, 178);
+  border: 1px solid #ccc;
+  padding: 5px;
+  border-radius: 3px;
+}
+
+select option {
+  background-color: #1a1621;
+  color: rgb(184, 178, 178);
+}
+
+
+
+.btn2 {
+  background-color: #481a66;
+  color: white;
+  border: none;
+  width: 100%;
+  max-width: 250px;
+  height: 50px;
+  border-radius: 50px;
+  transition: background-color 0.3s ease;
+  margin-top: 20px;
+}
+
+.btn2:active {
+  transform: scale(0.95);
+}
+
+.btn2:hover {
+  background-color: #363636;
+}
+
+#liveAlertPlaceholder {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  width: auto;
+}
+
+.black-alert {
+  background-color: #5d2285 !important;
+  color: rgb(184, 178, 178) !important;
+  border: none !important;
+  border-radius: 60px !important;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.black-alert.show {
+  opacity: 1;
+}
+
+.black-alert.fade {
+  transition: opacity 0.3s ease-in-out;
+}
+
+.black-alert.fade:not(.show) {
+  opacity: 0;
+}
+
+/* Стили для карусели */
+.carousel-inner {
+  position: relative;
+}
+
+.magnifier {
+  position: absolute;
+  border: 2px solid #363636;
+  width: 200px;
+  height: 200px;
+  pointer-events: none;
+  display: none;
+  z-index: 10;
+  background-color: #fff;
+  background-size: contain;
+}
+
+.magnifier.img {
+  position: absolute;
+  width: 200%;
+  height: auto;
+}
+
+.select-button-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.size-guide-btn {
+  background-color: #5d2285;
+  color: rgb(184, 178, 178);
+  border: none;
+  padding: 5px 15px;
+  border-radius: 3px;
+  cursor: pointer;
+  height: 100%;
+  transition: background-color 0.3s ease;
+}
+
+.size-guide-btn:hover {
+  background-color: #363636;
+}
+
+.modal-content {
+  background-color: #1a1621;
+  color: rgb(184, 178, 178);
+}
+
+.modal-header {
+  border-bottom: 1px solid #363636;
+}
+
+.modal-header .btn-close {
+  filter: invert(1);
+}
+
+.modal-title {
+  color: rgb(184, 178, 178);
+}
+
+/* тест */
+
+.modal-dialog {
+  max-width: 800px;  /* Стандартный размер для десктопа */
+  margin: 1.75rem auto;
+}
+
+
+/* мобильная версия */
+
+@media (max-width: 767px) {
+  .card-title1 {
+    font-size: 1.5rem;
+  }
+
+  .card-text1 {
+    font-size: 1.1rem;
+  }
+
+  .viborrazmera {
+    font-size: 1.1rem;
+  }
+
+  .btn2 {
+    height: 45px;
+    font-size: 1.1rem;
+  }
+
+  .viborrazmera, .viborrazmera2 {
+    margin-top: 15px;
+  }
+
+  select {
+    font-size: 1.1rem;
+    padding: 8px;
+  }
+
+  .size-guide-btn {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 575px) {
+  .btn2 {
+    height: 45px;
+    font-size: 1.2rem;
+    max-width: 100%;
+    padding: 0 20px;
+  }
+
+  .card-title1 {
+    font-size: 1.6rem;
+  }
+
+  .card-text1 {
+    font-size: 1.2rem;
+  }
+
+  .viborrazmera {
+    font-size: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  select {
+    font-size: 1.2rem;
+    padding: 10px;
+    width: 100%;
+    margin: 5px 0;
+  }
+
+  .size-guide-btn {
+    font-size: 1.1rem;
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+  }
+
+  .carousel-item.active img {
+    height: 380px;
+  }
+
+  .carousel-item img {
+    height: 380px;
+  }
+}
+
+/* Специальные стили для очень маленьких экранов */
+@media (max-width: 380px) {
+  .btn2 {
+    height: 50px;
+    font-size: 1.1rem;
+    margin: 15px auto;
+  }
+
+  .card-title1 {
+    font-size: 1.4rem;
+    line-height: 1.3;
+  }
+
+  .card-text1 {
+    font-size: 1.1rem;
+    line-height: 1.4;
+  }
+
+  .viborrazmera {
+    font-size: 1.1rem;
+  }
+
+  select {
+    font-size: 1.1rem;
+    padding: 12px;
+  }
+
+  .size-guide-btn {
+    font-size: 1rem;
+    padding: 12px;
+  }
+
+  .carousel-item.active img,
+  .carousel-item img {
+    height: 300px;
+  }
+}
+
+/* Стили для размерной сетки мобильная версия */
+
+@media (max-width: 767px) {
+  .modal-dialog {
+      max-width: 100%;
+      margin: 0;
+  }
+
+  .modal-content {
+      background-color: #1a1621;
+      min-height: 100vh;
+  }
+
+  .modal-body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 80vh;
+      padding: 10px;  /* Добавляем отступы */
+      overflow: auto;  /* Добавляем прокрутку если нужно */
+  }
+
+  .modal-body img {
+      width: 100%;  /* Занимаем всю доступную ширину */
+      height: auto;  /* Сохраняем пропорции */
+      object-fit: contain;  /* Убеждаемся, что изображение помещается целиком */
+      max-height: 90vh;  /* Ограничиваем высоту */
+      transform: scale(1.2);  /* Немного увеличиваем, но не так сильно */
+  }
+}

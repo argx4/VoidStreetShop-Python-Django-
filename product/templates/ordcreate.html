@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+
+<link rel="stylesheet" href="{% static 'css/ordcreate.css' %}">
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript" src="{% static 'js/ordercreatejs/emailjskeyy.js' %}"></script>
+{% endblock %}
+
+{% block content %}
+<main>
+    <div class="container">
+        <h1>Ваше замовлення</h1>
+    <div class="products">
+        {% for basket in baskets %}
+            <div class="product-card">
+                <img src="{{ basket.product.image.url }}" alt=".">
+                <div class="product-name">{{ basket.product.name }}</div>
+                <div class="product-price">{{ basket.sum }} ₴</div>
+                <div class="product-size">{{ basket.selected_size }} size</div>
+                <div class="product-quantity">{{ basket.quantity }} шт.</div>
+            </div>
+                {% endfor %}
+        </div>
+
+        <div class="eu-delivery-notice">
+            <p>⚠️ Увага! При доставці в країни ЄС всі дані необхідно вказувати англійською мовою</p>
+        </div>
+
+        <form method="POST" id="order-form">
+            {% csrf_token %}
+            <div class="form-group" hidden>
+                <label for="basket_items">Ваші товари</label>
+                <textarea id="basket_items" name="basket_items" readonly style="width: 100%; min-height: 150px; resize: none;">{% for basket in baskets %}{{ basket.product.name }} - Розмір: {{ basket.selected_size }}, Кількість: {{ basket.quantity }} шт.{% if not forloop.last %}&#13;&#10;{% endif %}{% endfor %}
+                    К оплате: {{ total_sum }}₴
+                </textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="first_name">Ім'я</label>
+                <input type="text" id="first_name" name="first_name" placeholder="Введіть ім'я" required/>
+            </div>
+
+            <div class="form-group">
+                <label for="last_name">Прізвище</label>
+                <input type="text" id="last_name" name="last_name" placeholder="Введіть прізвище" required />
+            </div>
+
+            <div class="form-group">
+                <label for="middle_name">По-батькові</label>
+                <input type="text" id="middle_name" name="middle_name" placeholder="Введіть по-батькові" required />
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Номер телефону</label>
+                <input type="tel" id="phone" name="phone" placeholder="+380xxxxxxxxx" required />
+            </div>
+
+            <div class="form-group">
+                <label for="nova_poshta">Номер відділення Нової Пошти</label>
+                <input type="text" id="nova_poshta" name="nova_poshta" placeholder="Наприклад: № 25" required />
+            </div>
+
+            <div class="form-group">
+                <label for="City">Місто/село та область</label>
+                <input type="text" id="City" name="City" placeholder="Наприклад Харків, Харківська область" required />
+            </div>
+            
+            <div class="form-group">
+                <label for="contacts">Ваш Instagram/Telegram</label>
+                <input type="text" id="contacts" name="contacts" placeholder="Наприклад @user123" required />
+            </div>
+
+            
+
+            <b><div class="total_sum">До сплати: {{ total_sum }} ₴</div></b>
+            <button class="btn1" type="submit">Оформити замовлення</button>
+
+            
+
+        
+            
+            
+        </form>
+    <script src="{% static 'js/ordercreatejs/basketclear.js' %}"></script> 
+    </div>
+</main>
+{% endblock %}

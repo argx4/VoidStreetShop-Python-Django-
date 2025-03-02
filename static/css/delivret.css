@@ -1,0 +1,94 @@
+.delivery-payment-info {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 30px 20px;
+    text-align: center;
+}
+
+.delivery-payment-info h2 {
+    font-size: 28px;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.delivery-payment-info ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+    display: inline-block;
+    width: 90%;
+    max-width: 600px;
+}
+
+.delivery-payment-info li {
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 15px;
+    color: #a9a9a9; /* Silver color for text */
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.delivery-payment-info li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #a9a9a9; /* Silver color for bullet points */
+    font-size: 20px;
+}
+
+.delivery-payment-info .section {
+    margin-bottom: 40px;
+}
+
+.delivery-payment-info .section:last-child {
+    margin-bottom: 0;
+}
+
+/* Responsive styles for mobile devices */
+@media (max-width: 768px) {
+    .delivery-payment-info {
+        padding: 25px 20px;
+    }
+    
+    .delivery-payment-info h2 {
+        font-size: 32px;
+        margin-bottom: 30px;
+    }
+    
+    .delivery-payment-info ul {
+        width: 100%;
+    }
+    
+    .delivery-payment-info li {
+        font-size: 22px;
+        line-height: 1.4;
+        padding-left: 30px;
+        margin-bottom: 20px;
+    }
+    
+    .delivery-payment-info li::before {
+        font-size: 24px;
+        top: -2px;
+    }
+}
+
+/* Extra small devices */
+@media (max-width: 480px) {
+    .delivery-payment-info h2 {
+        font-size: 28px;
+        margin-bottom: 25px;
+    }
+    
+    .delivery-payment-info li {
+        font-size: 20px;
+        padding-left: 28px;
+        margin-bottom: 18px;
+    }
+    
+    .delivery-payment-info li::before {
+        font-size: 22px;
+        top: -2px;
+    }
+}

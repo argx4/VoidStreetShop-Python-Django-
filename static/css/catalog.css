@@ -1,0 +1,242 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  font-size: 16px;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(135deg, #050108 0%, #140720 50%, #270d40 100%);
+  background-attachment: fixed;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}
+
+
+footer {
+  background-color: black;
+  color: white;
+  text-align: center;
+  padding: 1rem 0;
+}
+
+.nav-link img {
+  transition: transform 0.2s ease;
+}
+
+.nav-link:active img {
+  transform: scale(0.9);
+}
+
+.navbar.navbar-expand-lg.navbar-dark.bg-dark {
+  background-color: #000000 !important;
+  height: 65px;
+}
+
+.container-fluid {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1rem;
+}
+
+.nav-items {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-nav {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nav-item {
+  margin: 0 5px;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card-container .card {
+  background-color: #1a1621;
+  color: rgb(184, 178, 178);
+  gap: 5px;
+  margin: 10px;
+  margin-left: 150px;
+  margin-right: -90px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.card:hover{
+  transform: scale(1.02);
+  box-shadow: 0 4px 10px rgba(232, 9, 248, 0.1);
+}
+
+.btn.btn-dark{
+  background-color: #5d2285;
+  width: 200px;
+  border-radius: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.btn.btn-dark:active{
+  transform: scale(0.95);
+}
+
+.cart-container {
+    position: relative;
+    display: inline-block;
+    padding: 6px;
+    cursor: pointer;
+}
+
+.cart-icon {
+    width: 25px;
+    height: 25px;
+    stroke: white;
+    stroke-width: 2;
+    fill: none;
+}
+
+.cart-counter {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #ff4444;
+    color: white;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+}
+
+/* каталог под телефон */
+
+@media (max-width: 480px) {
+  .card-container {
+    gap: 20px;
+    padding: 10px;
+    margin-left: -140px;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 400px;
+    margin: 10px;
+  }
+
+  .card img {
+    width: 100%;
+    height: auto;
+  }
+
+  .card-body {
+    text-align: center;
+    font-size: 1.2rem;
+  }
+
+  .btn.btn-dark {
+    width: 100%;
+    height: 50px;
+    font-size: 1.1rem;
+    border-radius: 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  .card-container {
+    gap: 25px;
+    padding: 15px;
+  }
+
+  .card {
+    width: 95%;
+    max-width: 450px;
+  }
+
+  .card img {
+    width: 100%;
+    height: auto;
+  }
+
+  .card-body {
+    text-align: center;
+    font-size: 1.1rem;
+  }
+
+  .btn.btn-dark {
+    width: 100%;
+    height: 45px;
+    font-size: 1rem;
+    border-radius: 10px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .card-container {
+    gap: 30px;
+    padding: 20px;
+  }
+
+  .card {
+    width: 90%;
+    max-width: 500px;
+  }
+
+  .card img {
+    width: 100%;
+    height: auto;
+  }
+
+  .btn.btn-dark {
+    font-size: 1rem;
+    height: 45px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .card-container {
+    gap: 35px;
+    padding: 25px;
+  }
+
+  .card {
+    width: 80%;
+    max-width: 600px;
+  }
+}
+
+/* конец для каталога  */
+
+/* Стили для полос прокрутки */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1621;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #5d2285;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #7d2eb3;
+}

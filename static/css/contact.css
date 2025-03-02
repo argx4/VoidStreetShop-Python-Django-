@@ -1,0 +1,80 @@
+.contactinf {
+  margin: 20px auto;
+  padding: 10px;
+  max-width: 100%;
+}
+
+.contactinf {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+        padding: 20px;
+    }
+    
+.card {
+        flex: 1;
+        min-width: 300px;
+        margin: 0 !important;
+        background-color: #1a1621;
+        color: rgb(184, 178, 178);
+    }
+
+
+
+.card img {
+  width: 100%;
+  height: 200px;
+  border-radius: 8px;
+}
+
+
+@media (max-width: 1200px) {
+  .contactinf {
+    margin: 30px 20px;
+  }
+
+  .card {
+    max-width: 480px;
+  }
+}
+
+@media (max-width: 768px) {
+  .contactinf {
+    margin: 20px;
+    padding: 10px;
+    text-align: center;
+  }
+
+  .card {
+    flex-direction: column;
+    max-width: 400px;
+  }
+
+  .card img {
+    margin-bottom: 15px;
+  }
+
+  .card-body {
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+
+}
+
+@media (max-width: 480px) {
+  .contactinf {
+    margin: 10px;
+    padding: 5px;
+  }
+
+  .card {
+    max-width: 350px;
+  }
+
+  .card img {
+    height: 400px;
+    border-radius: 5px;
+  }
+
+}

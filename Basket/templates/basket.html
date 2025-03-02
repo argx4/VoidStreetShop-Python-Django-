@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+<title>{{ title }}</title>
+<link rel="stylesheet" href="{% static 'css/basket.css' %}">
+{% endblock %}
+
+{% block content %}
+<main>
+  <div class="container">
+    {% if baskets %}
+    <h4 class="mt-3 mb-3 d-flex justify-content-between align-items-center" style="color: rgb(184, 178, 178);">
+      Кошик
+    </h4>
+
+    <div class="basket-container">
+      <div class="row basket-grid">
+        {% for basket in baskets %}
+        <div class="col-6 col-md-4 mb-2">
+          <div class="card h-100">
+            <div class="card-body">
+              <div class="text-center mb-2">
+                <img src="{{ basket.product.image.url }}" class="img-fluid product-image" alt="{{ basket.product.name }}">
+              </div>
+              <div class="product-info">
+                <h6 class="product-title">{{ basket.product.name }}</h6>
+                <div class="product-details">
+                  <small>Розмір: {{ basket.selected_size }}</small>
+                  <small>Кількість: {{ basket.quantity }}</small>
+                  <p class="price mb-2"><b>{{ basket.sum }} &#8372;</b></p>
+                </div>
+                <div class="delete-btn-wrapper">
+                  <a href="{% url 'basket_remove' basket.id %}" class="btn btn-danger btn-sm">
+                    <i class="bi bi-trash3" style="color: #ffffff"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+
+      <div class="basket-summary">
+        <div class="card">
+          <div class="card-footer">
+            <div class="row align-items-center">
+              <div class="col-6">
+                <p class="mb-1">Загальна сума</p>
+                <h4 class="mb-0">{{ total_sum }} &#8372;</h4>
+              </div>
+              <div class="col-6 text-right">
+                <p class="mb-1">Кількість</p>
+                <h4 class="mb-0">{{ total_quantity }} шт.</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-3">
+          <a href="{% url 'ord' %}" class="btn btn-lg btn-block">
+            Оформити замовлення
+          </a>
+        </div>
+      </div>
+    </div>
+    {% else %}
+    <h4 class="text-center mt-5">
+      Кошик порожній
+    </h4>
+    {% endif %}
+  </div>
+</main>
+{% endblock %}
