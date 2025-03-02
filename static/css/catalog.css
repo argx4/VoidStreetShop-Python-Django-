@@ -2,6 +2,8 @@ html, body {
   height: 100%;
   margin: 0;
   font-size: 16px;
+  scrollbar-width: thin;
+  scrollbar-color: #5d2285 #1a1621;
 }
 
 body {
@@ -10,6 +12,8 @@ body {
   background: linear-gradient(135deg, #050108 0%, #140720 50%, #270d40 100%);
   background-attachment: fixed;
   min-height: 100vh;
+  scrollbar-width: thin;
+  scrollbar-color: #5d2285 #1a1621;
 }
 
 main {
