@@ -184,6 +184,10 @@ footer {
   color: white;
 }
 
+.category-item:active {
+  transform: scale(0.95);
+}
+
 .category-dropdown {
   display: none;
   margin-bottom: 20px;
