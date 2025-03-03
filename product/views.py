@@ -5,9 +5,15 @@ from Basket.models import Basket
 from django.core.mail import send_mail
 
 def catalog(request):
+    products = Product.objects.all()
+    search_query = request.GET.get('search', '')
+    
+    if search_query:
+        products = products.filter(name__icontains=search_query)
+    
     context = {
         'title': 'Voidstreet_studio',
-        'catalog': Product.objects.all(),
+        'catalog': products,
         'categories': ProductCategory.objects.all(),
     }
     return render(request, 'catalog.html', context)

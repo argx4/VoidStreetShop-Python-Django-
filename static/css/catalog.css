@@ -48,6 +48,79 @@ footer {
   padding: 0.5rem 1rem;
 }
 
+.navbar-brand-container {
+  flex-shrink: 0;
+}
+
+.search-container {
+  display: flex;
+  justify-content: center;
+  width: 500px;
+  max-width: 500px;
+}
+
+.search-form {
+  width: 100%;
+}
+
+.input-group {
+  width: 100%;
+}
+
+.search-input {
+  background-color: #1a1621 !important;
+  border: 1px solid #5d2285 !important;
+  color: rgb(184, 178, 178) !important;
+}
+
+.search-input:focus {
+  background-color: #1a1621 !important;
+  border-color: #7d2eb3 !important;
+  color: rgb(184, 178, 178) !important;
+  box-shadow: 0 0 0 0.25rem rgba(93, 34, 133, 0.25) !important;
+}
+
+.search-input::placeholder {
+  color: rgb(124, 124, 124) !important;
+}
+
+.btn-search {
+  background-color: white;
+  border: 1px solid #5d2285;
+  color: #5d2285;
+  padding: 6px 12px;
+}
+
+.btn-search .bi-search-heart-fill {
+  color: #5d2285;
+  font-size: 20px;
+}
+
+.btn-search:hover {
+  background-color: white;
+  border-color: #7d2eb3;
+  color: #7d2eb3;
+}
+
+.btn-search:hover .bi-search-heart-fill {
+  color: #7d2eb3;
+}
+
+.btn-search:active {
+  background-color: black !important;
+  border-color: #7d2eb3 !important;
+  color: #7d2eb3 !important;
+  transform: scale(0.95);
+}
+
+.btn-search:active .bi-search-heart-fill {
+  color: #7d2eb3;
+}
+
+.cart-container {
+  flex-shrink: 0;
+}
+
 .nav-items {
   display: flex;
   align-items: center;
@@ -94,13 +167,6 @@ footer {
 
 .btn.btn-dark:active{
   transform: scale(0.95);
-}
-
-.cart-container {
-    position: relative;
-    display: inline-block;
-    padding: 6px;
-    cursor: pointer;
 }
 
 .cart-icon {
@@ -219,7 +285,7 @@ footer {
     height: auto;
   }
 
-  .btn.btn-dark {
+  .btn.btn-search {
     font-size: 1rem;
     height: 45px;
   }
@@ -256,4 +322,44 @@ footer {
 
 ::-webkit-scrollbar-thumb:hover {
   background: #7d2eb3;
+}
+
+.navbar-toggler {
+  border-color: #5d2285;
+}
+
+.navbar-toggler:focus {
+  box-shadow: 0 0 0 0.25rem rgba(93, 34, 133, 0.25);
+}
+
+@media (max-width: 576px) {
+  .container-fluid {
+    gap: 0.5rem;
+  }
+
+  .search-container {
+    flex: 1;
+    max-width: none;
+  }
+
+  .search-form {
+    margin: 0 0.25rem;
+  }
+
+  .search-input {
+    font-size: 14px;
+  }
+
+  .btn-search:active{
+    background-color: black !important;
+    transform: scale(0.95);
+  }
+  
+  .btn-search {
+    padding: 0.25rem 0.5rem;
+  }
+
+  .btn-search .bi-search-heart-fill {
+    font-size: 23px;
+  }
 }
