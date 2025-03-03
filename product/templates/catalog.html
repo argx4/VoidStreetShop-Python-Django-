@@ -34,34 +34,94 @@
   </nav>
   
   <main>
- <div class="card-container">
-  {% for Product in catalog %}
-  <div class="card" style="width: 18rem;">
-    <img src="{{ Product.image.url }}" class="card-img-top" alt="..." style="height: 283px; width: 286px; ">
-      <center>
-    <div class="card-body">
-      <h5 class="card-title">{{ Product.name }}</h5>
-      <b><p class="card-text">{{ Product.price }} ₴</p></b>
-        <p class="card-text"></p>
-      <a href="{% url 'product_detail' Product.pk %}" class="btn btn-dark">Детальніше</a>
-    </div>
+    <div class="content-wrapper">
+      <!-- Category Sidebar for Desktop -->
+      <div class="category-sidebar">
+        <h5 class="category-title">Категорії</h5>
+        <div class="category-list">
+          <a href="{% url 'catalog_view' %}" class="category-item {% if not category_id %}active{% endif %}">
+            Всі товари
+          </a>
+          {% for category in categories %}
+          <a href="{% url 'catalog_view' %}?category={{ category.id }}" class="category-item {% if category_id == category.id|stringformat:'s' %}active{% endif %}">
+            {{ category.name }}
+          </a>
+          {% endfor %}
+        </div>
+      </div>
+
+      <!-- Category Dropdown for Mobile -->
+      <div class="category-dropdown">
+        <button class="category-dropdown-btn" onclick="toggleDropdown(event)">
+          {% if category_id %}
+            {% for category in categories %}
+              {% if category_id == category.id|stringformat:'s' %}
+                {{ category.name }}
+              {% endif %}
+            {% endfor %}
+          {% else %}
+            Всі товари
+          {% endif %}
+          <i class="bi bi-chevron-down"></i>
+        </button>
+        <div class="category-dropdown-content" id="categoryDropdown">
+          <a href="{% url 'catalog_view' %}" class="category-dropdown-item {% if not category_id %}active{% endif %}">
+            Всі товари
+          </a>
+          {% for category in categories %}
+          <a href="{% url 'catalog_view' %}?category={{ category.id }}" class="category-dropdown-item {% if category_id == category.id|stringformat:'s' %}active{% endif %}">
+            {{ category.name }}
+          </a>
+          {% endfor %}
+        </div>
+      </div>
+
+      <!-- Products Grid -->
+      <div class="card-container">
+        {% for Product in catalog %}
+        <div class="card">
+          <img src="{{ Product.image.url }}" class="card-img-top" alt="...">
+          <center>
+            <div class="card-body">
+              <h5 class="card-title">{{ Product.name }}</h5>
+              <b><p class="card-text">{{ Product.price }} ₴</p></b>
+              <p class="card-text"></p>
+              <a href="{% url 'product_detail' Product.pk %}" class="btn btn-dark">Детальніше</a>
+            </div>
           </center>
-  </div>
-  {% endfor %}
-</div>
-</main>
- <footer>
-  <p style="display: flex; align-items: center; justify-content: center; gap: 20px; margin-bottom: 10px;">
-    <a class="nav-link" href="{% url 'contact_view' %}" style="padding: 0; margin: 0; color: rgb(184, 178, 178);">Контакти</a>
-    <a class="nav-link" href="{% url 'delivret' %}" style="padding: 0; margin: 0; color: rgb(184, 178, 178);">Доставка/оплата</a>
-</p>
-<p style="display: flex; align-items: center; justify-content: center; gap: 10px;">
-    &copy; 2025 Voidstreet_studio 
-    <a href="https://www.instagram.com/voidstreet_studio/?utm_source=qr&igsh=bTU0dHNta2hhaHdv#" target="_blank">
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p style="display: flex; align-items: center; justify-content: center; gap: 20px; margin-bottom: 10px;">
+      <a class="nav-link" href="{% url 'contact_view' %}" style="padding: 0; margin: 0; color: rgb(184, 178, 178);">Контакти</a>
+      <a class="nav-link" href="{% url 'delivret' %}" style="padding: 0; margin: 0; color: rgb(184, 178, 178);">Доставка/оплата</a>
+    </p>
+    <p style="display: flex; align-items: center; justify-content: center; gap: 10px;">
+      &copy; 2025 Voidstreet_studio 
+      <a href="https://www.instagram.com/voidstreet_studio/?utm_source=qr&igsh=bTU0dHNta2hhaHdv#" target="_blank">
         <i class="bi bi-instagram" style="color: #ffffff"></i>
-    </a>
-</p>
+      </a>
+    </p>
   </footer>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <script>
+    function toggleDropdown(event) {
+      event.preventDefault();
+      const dropdown = document.getElementById('categoryDropdown');
+      dropdown.classList.toggle('show');
+      
+      // Close dropdown when clicking outside
+      document.addEventListener('click', function closeDropdown(e) {
+        if (!e.target.closest('.category-dropdown')) {
+          dropdown.classList.remove('show');
+          document.removeEventListener('click', closeDropdown);
+        }
+      });
+    }
+  </script>
 </body>
 </html>

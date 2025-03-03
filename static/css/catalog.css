@@ -138,172 +138,243 @@ footer {
   margin: 0 5px;
 }
 
-.card-container {
+.content-wrapper {
   display: flex;
-  flex-wrap: wrap;
+  padding: 20px;
+  gap: 20px;
 }
 
-.card-container .card {
+.category-sidebar {
+  width: 250px;
   background-color: #1a1621;
+  border-radius: 10px;
+  padding: 20px;
+  height: fit-content;
+}
+
+.category-title {
+  color: rgb(184, 178, 178);
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+}
+
+.category-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.category-item {
+  color: rgb(184, 178, 178);
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  transition: background-color 0.2s ease;
+}
+
+.category-item:hover {
+  background-color: #5d2285;
+  color: white;
+}
+
+.category-item.active {
+  background-color: #5d2285;
+  color: white;
+}
+
+.category-dropdown {
+  display: none;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.category-dropdown-btn {
+  background-color: #1a1621;
+  border: 1px solid #5d2285;
+  color: rgb(184, 178, 178);
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.category-dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #1a1621;
+  width: 100%;
+  max-width: 400px;
+  border: 1px solid #5d2285;
+  border-radius: 5px;
+  margin-top: 5px;
+  z-index: 1000;
+}
+
+.category-dropdown-content.show {
+  display: block;
+}
+
+.category-dropdown-item {
+  color: rgb(184, 178, 178);
+  padding: 10px;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  transition: background-color 0.2s ease;
+}
+
+.category-dropdown-item:hover {
+  background-color: #5d2285;
+  color: white;
+}
+
+.category-dropdown-item.active {
+  background-color: #5d2285;
+  color: white;
+}
+
+.card {
+  background-color: #1a1621 !important;
   color: rgb(184, 178, 178);
   gap: 5px;
   margin: 10px;
   margin-left: 150px;
   margin-right: -90px;
+  width: 18rem;
   transition: transform 0.2s ease-in-out;
+  border: none !important;
 }
 
-.card:hover{
+.card:hover {
   transform: scale(1.02);
   box-shadow: 0 4px 10px rgba(232, 9, 248, 0.1);
 }
 
-.btn.btn-dark{
-  background-color: #5d2285;
-  width: 200px;
-  border-radius: 20px;
-  transition: background-color 0.3s ease;
+.card img {
+  width: 286px !important;
+  height: 283px !important;
+  object-fit: cover;
 }
 
-.btn.btn-dark:active{
+.card-body {
+  padding: 1rem;
+}
+
+.card-title {
+  color: rgb(184, 178, 178) !important;
+  margin-bottom: 0.75rem;
+  font-size: 1.1rem;
+}
+
+.card-text {
+  color: rgb(184, 178, 178) !important;
+  margin-bottom: 1rem;
+}
+
+.btn.btn-dark {
+  background-color: #5d2285;
+  width: 200px;
+  border: none;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+  padding: 8px 0;
+}
+
+.btn.btn-dark:hover {
+  background-color: #7d2eb3;
+  transform: translateY(-2px);
+}
+
+.btn.btn-dark:active {
   transform: scale(0.95);
 }
 
-.cart-icon {
-    width: 25px;
-    height: 25px;
-    stroke: white;
-    stroke-width: 2;
-    fill: none;
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: flex-start;
+  flex: 1;
 }
 
-.cart-counter {
-    position: absolute;
-    top: 0;
-    right: 0;
-    background-color: #ff4444;
-    color: white;
-    border-radius: 50%;
-    width: 20px;
-    height: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 12px;
-    font-family: Arial, sans-serif;
-    font-weight: bold;
-}
-
-/* каталог под телефон */
-
-@media (max-width: 480px) {
+/* Медиа-запросы для адаптивности */
+@media (max-width: 1200px) {
   .card-container {
-    gap: 20px;
-    padding: 10px;
-    display: flex;
     justify-content: center;
   }
-
-  .card-container .card {
-    width: 100%;
-    max-width: 400px;
+  
+  .card {
     margin: 10px;
-    margin-left: 10px;
-    margin-right: 10px;
+    width: 18rem;
   }
-
+  
   .card img {
-    width: 100%;
-    height: auto;
+    width: 286px !important;
+    height: 283px !important;
+  }
+}
+
+@media (max-width: 992px) {
+  .content-wrapper {
+    flex-direction: column;
   }
 
-  .card-body {
-    text-align: center;
-    font-size: 1.2rem;
+  .category-sidebar {
+    display: none;
   }
 
-  .btn.btn-dark {
-    width: 100%;
-    height: 50px;
-    font-size: 1.1rem;
-    border-radius: 12px;
+  .category-dropdown {
+    display: block;
+  }
+
+  .card {
+    margin: 10px;
   }
 }
 
 @media (max-width: 768px) {
-  .card-container {
-    gap: 25px;
-    padding: 15px;
-    display: flex;
-    justify-content: center;
-  }
-
-  .card-container .card {
-    width: 95%;
-    max-width: 450px;
-    margin: 10px;
-    margin-left: 10px;
-    margin-right: 10px;
-  }
-
-  .card img {
-    width: 100%;
-    height: auto;
-  }
-
-  .card-body {
-    text-align: center;
-    font-size: 1.1rem;
-  }
-
-  .btn.btn-dark {
-    width: 100%;
-    height: 45px;
-    font-size: 1rem;
-    border-radius: 10px;
-  }
-}
-
-@media (max-width: 1000px) {
-  .card-container {
-    gap: 30px;
-    padding: 20px;
-    display: flex;
-    justify-content: center;
-  }
-
-  .card-container .card {
-    width: 90%;
-    max-width: 500px;
-    margin: 10px;
-    margin-left: 10px;
-    margin-right: 10px;
-  }
-
-  .card img {
-    width: 100%;
-    height: auto;
-  }
-
-  .btn.btn-search {
-    font-size: 1rem;
-    height: 45px;
-  }
-}
-
-@media (max-width: 1200px) {
-  .card-container {
-    gap: 35px;
-    padding: 25px;
-  }
-
   .card {
-    width: 80%;
-    max-width: 600px;
+    width: 18rem;
+    margin: 10px;
+  }
+
+  .card img {
+    width: 286px !important;
+    height: 283px !important;
+  }
+
+  .content-wrapper {
+    padding: 10px;
+  }
+  
+  .btn.btn-dark {
+    width: 200px;
+  }
+
+  .card-container {
+    justify-content: center;
   }
 }
 
-/* конец для каталога  */
+@media (max-width: 576px) {
+  .card {
+    width: 18rem;
+    margin: 10px auto;
+  }
+
+  .card img {
+    width: 286px !important;
+    height: 283px !important;
+  }
+}
 
 /* Стили для полос прокрутки */
 ::-webkit-scrollbar {

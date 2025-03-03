@@ -7,14 +7,19 @@ from django.core.mail import send_mail
 def catalog(request):
     products = Product.objects.all()
     search_query = request.GET.get('search', '')
+    category_id = request.GET.get('category', '')
     
     if search_query:
         products = products.filter(name__icontains=search_query)
+
+    if category_id:
+        products = products.filter(category_id=category_id)
     
     context = {
         'title': 'Voidstreet_studio',
         'catalog': products,
         'categories': ProductCategory.objects.all(),
+        'category_id': category_id,
     }
     return render(request, 'catalog.html', context)
 
