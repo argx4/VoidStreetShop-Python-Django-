@@ -441,3 +441,66 @@ footer {
     font-size: 23px;
   }
 }
+
+/* Pagination styles */
+.pagination-nav {
+    margin-top: 20px; /* Add some space above the pagination */
+    margin-bottom: 15px;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    padding-left: 0;
+    list-style: none;
+    border-radius: 0.25rem;
+}
+
+.page-item {
+    margin: 0 2px;
+}
+
+.page-link {
+    position: relative;
+    display: block;
+    padding: 0.5rem 0.75rem;
+    color: #5d2285;
+    text-decoration: none;
+    background-color: #1a1621;
+    border: 1px solid #5d2285;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.page-link:hover {
+    z-index: 2;
+    color: #7d2eb3;
+    background-color: #5d2285;
+    border-color: #7d2eb3;
+}
+
+.page-item.active .page-link {
+    z-index: 3;
+    color: #fff;
+    background-color: #7d2eb3;
+    border-color: #7d2eb3;
+}
+
+.page-item.disabled .page-link {
+    color: #6c757d;
+    pointer-events: none;
+    background-color: #1a1621;
+    border-color: #5d2285;
+}
+
+/* Media query for mobile pagination */
+@media (max-width: 768px) {
+    .pagination-nav {
+        margin-top: 10px; /* Adjust margin for smaller screens */
+    }
+
+    .page-link {
+        padding: 0.3rem 0.5rem; /* Smaller padding for mobile */
+        font-size: 0.9rem; /* Slightly smaller font size */
+    }
+}
