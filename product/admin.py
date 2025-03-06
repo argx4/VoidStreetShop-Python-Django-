@@ -12,6 +12,6 @@ class ProductAdmin(admin.ModelAdmin):
     formfield_overrides = {
         models.JSONField: {'widget': Textarea},
     }
-    list_display = ('name', 'price', 'quantity', 'category', 'sizes', 'id')
+    list_display = ('name', 'price', 'quantity', 'category', 'sizes', 'id', 'active')
     search_fields = ('name',)
 
