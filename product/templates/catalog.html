@@ -80,14 +80,23 @@
       
       <div class="card-container">
         {% for Product in catalog %}
-        <div class="card">
+        <div class="card"> 
           <img src="{{ Product.image.url }}" class="card-img-top" alt="...">
+          {% if not Product.active %}
+          <div class="sold-out-overlay">
+            SOLD OUT
+          </div>
+          {% endif %}
           <center>
             <div class="card-body">
               <h5 class="card-title">{{ Product.name }}</h5>
               <b><p class="card-text">{{ Product.price }} ₴</p></b>
               <p class="card-text"></p>
-              <a href="{% url 'product_detail' Product.pk %}" class="btn btn-dark">Детальніше</a>
+              {% if Product.active %}
+                <a href="{% url 'product_detail' Product.pk %}" class="btn btn-dark">Детальніше</a>
+              {% else %}
+                <button class="btn btn-dark" disabled>Детальніше</button>
+              {% endif %}
             </div>
           </center>
         </div>

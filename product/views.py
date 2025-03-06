@@ -95,6 +95,11 @@ class ProductDetailView(DetailView):
     context_object_name = 'product'
     extra_context = {'title': 'Деталі товару'}
 
+    def get(self, request, *args, **kwargs):
+        self.object = self.get_object()
+        if not self.object.active:
+            return redirect('catalog_view')
+        return super().get(request, *args, **kwargs)
 
 def basket(request):
     session_key = request.session.session_key

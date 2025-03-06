@@ -21,6 +21,7 @@ class Product(models.Model):
     # image3 = models.ImageField(upload_to='size_tables') размерная сетка 
     category = models.ForeignKey(to=ProductCategory, on_delete=models.CASCADE)
     sizes = models.JSONField(default=list, blank=True)
+    active = models.BooleanField(default=True)
 
     def __str__(self):
         return f'Продукт: {self.name} | Категория: {self.category.name}'
