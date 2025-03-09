@@ -45,6 +45,7 @@ Thumbs.db
 static/admin/
 static_root/
 media_root/
+media/
 
 # Testing
 .coverage
