@@ -279,3 +279,21 @@
     max-height: 110px;
   }
 }
+
+@media (min-width: 412px) and (max-width: 767px) {
+
+  .btn.btn-danger.btn-sm {
+      margin-left: 8.5rem;
+
+  }
+
+}
+
+@media (min-width: 250px) and (max-width: 350px) {
+
+  .btn.btn-danger.btn-sm {
+      margin-left: 6.3rem;
+  }
+
+
+}
