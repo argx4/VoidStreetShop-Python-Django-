@@ -29,10 +29,18 @@
         </form>
       </div>
 
-      <div class="cart-container">
-        <a class="nav-link" href="{% url 'basket_view' %}">
-          <img src="https://i.ibb.co/DfZXVH5x/shopping-cart-1.png" border="0" width="30" height="30">
-        </a>
+      <div class="nav-buttons">
+        <div class="back-btn">
+          <a href="{% url 'catalog_view' %}">
+            <img src="https://i.ibb.co/1YVbJ7Bx/left-arrow.png" border="0" width="30" height="30">
+          </a>
+        </div>
+
+        <div class="cart-container">
+          <a class="nav-link" href="{% url 'basket_view' %}">
+            <img src="https://i.ibb.co/DfZXVH5x/shopping-cart-1.png" border="0" width="30" height="30">
+          </a>
+        </div>
       </div>
     </div>
   </nav>
@@ -189,5 +197,6 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
   <script src="{% static 'js/catalogjs/mobdropdownjs.js' %}"></script>
   <script src="{% static 'js/catalogjs/search-toggle.js' %}"></script>
+  <script src="{% static 'js/catalogjs/back-button.js' %}"></script>
 </body>
 </html>

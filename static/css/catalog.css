@@ -61,6 +61,41 @@ footer {
   display: block;
 }
 
+.nav-buttons {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-left: 20px;
+}
+
+.back-btn {
+  flex-shrink: 0;
+  display: none;
+  align-items: center;
+  height: 38px;
+  margin-top: -6px;
+}
+
+.back-btn a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  height: 100%;
+}
+
+.back-btn img {
+  transition: transform 0.2s ease;
+}
+
+.back-btn:active img {
+  transform: scale(0.9);
+}
+
+.back-btn.show {
+  display: flex;
+}
+
 .search-toggle-btn {
   display: none;
   background: none;
