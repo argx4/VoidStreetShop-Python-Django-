@@ -50,13 +50,35 @@ footer {
 
 .navbar-brand-container {
   flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
 }
 
 .search-container {
-  display: flex;
-  justify-content: center;
-  width: 500px;
+  flex: 1;
   max-width: 500px;
+  display: block;
+}
+
+.search-toggle-btn {
+  display: none;
+  background: none;
+  border: none;
+  color: #5d2285;
+  font-size: 1.8rem;
+  cursor: pointer;
+  padding: 0.3rem;
+  transition: all 0.2s ease;
+  margin-top: -2px;
+}
+
+.search-toggle-btn:hover {
+  color: #5d2285;
+}
+
+.search-toggle-btn:active {
+  transform: scale(0.9);
 }
 
 .search-form {
@@ -425,32 +447,47 @@ footer {
 @media (max-width: 576px) {
   .container-fluid {
     gap: 0.5rem;
+    position: relative;
+  }
+
+  .search-toggle-btn {
+    display: block;
   }
 
   .search-container {
-    flex: 1;
-    max-width: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: #212529;
+    padding: 0.5rem;
+    z-index: 1000;
+    display: none;
+  }
+
+  .search-container.show {
+    display: block;
+    animation: slideDown 0.3s ease forwards;
+  }
+
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 
   .search-form {
-    margin: 0 0.25rem;
+    margin: 0;
+    width: 100%;
   }
 
   .search-input {
     font-size: 14px;
-  }
-
-  .btn-search:active{
-    background-color: black !important;
-    transform: scale(0.95);
-  }
-  
-  .btn-search {
-    padding: 0.25rem 0.5rem;
-  }
-
-  .btn-search .bi-search-heart-fill {
-    font-size: 23px;
   }
 }
 
