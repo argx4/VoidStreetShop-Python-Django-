@@ -208,3 +208,11 @@ form button:hover {
         font-size: 23px;
     }
 }
+
+@media (min-width: 250px) and (max-width: 350px) {
+
+    .total_sum {
+        font-size: 21px;
+    }
+
+}
