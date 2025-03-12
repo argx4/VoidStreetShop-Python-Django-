@@ -26,9 +26,9 @@ document.getElementById('order-form').addEventListener('submit', function(event)
     emailjs.sendForm('service_fpsn2s3', 'template_n7qe5dg', this)
         .then(function(response) {
             console.log('SUCCESS!', response.status, response.text);
-            alert('Заказ успешно создан! Ожидайте сообщение менеджера!');
+            alert('Замовлення успішно створено! Очікуйте повідомлення менеджера!');
             document.getElementById('order-form').reset();
-            clearBasket(); // Очищаем корзину после успешной отправки
+            clearBasket();
         }, function(error) {
             console.error('FAILED...', error);
             alert('Ошибка отправки: ' + JSON.stringify(error, null, 2));
