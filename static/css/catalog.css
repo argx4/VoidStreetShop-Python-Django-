@@ -237,6 +237,27 @@ footer {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  max-height: 600px;
+  overflow-y: auto;
+  padding-right: 5px;
+}
+
+.category-list::-webkit-scrollbar {
+  width: 8px;
+}
+
+.category-list::-webkit-scrollbar-track {
+  background: #1a1621;
+  border-radius: 5px;
+}
+
+.category-list::-webkit-scrollbar-thumb {
+  background: #5d2285;
+  border-radius: 5px;
+}
+
+.category-list::-webkit-scrollbar-thumb:hover {
+  background: #7d2eb3;
 }
 
 .category-item {
