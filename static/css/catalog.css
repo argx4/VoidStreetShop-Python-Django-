@@ -363,6 +363,9 @@ footer {
   transition: transform 0.2s ease-in-out;
   border: none !important;
   position: relative;
+  height: auto;
+  display: flex;
+  flex-direction: column;
 }
 
 .card:hover {
@@ -371,7 +374,7 @@ footer {
 }
 
 .card img {
-  width: 286px !important;
+  width: 100% !important;
   height: 283px !important;
   object-fit: cover;
 }
@@ -415,6 +418,7 @@ footer {
   gap: 20px;
   justify-content: flex-start;
   flex: 1;
+  align-items: flex-start;
 }
 
 /* Медиа-запросы для адаптивности */
@@ -426,10 +430,11 @@ footer {
   .card {
     margin: 10px;
     width: 18rem;
+    height: auto;
   }
   
   .card img {
-    width: 286px !important;
+    width: 100% !important;
     height: 283px !important;
   }
 }
@@ -460,7 +465,7 @@ footer {
   }
 
   .card img {
-    width: 286px !important;
+    width: 100% !important;
     height: 283px !important;
   }
 
@@ -484,7 +489,7 @@ footer {
   }
 
   .card img {
-    width: 286px !important;
+    width: 100% !important;
     height: 283px !important;
   }
 }
