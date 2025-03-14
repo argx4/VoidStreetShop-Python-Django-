@@ -1,0 +1,21 @@
+.cart-counter {
+    
+    font-size: 0.6rem !important;
+    padding: 0.25rem 0.4rem !important;
+    
+
+
+    
+    top: 20% !important;
+    left: 80% !important;
+    
+    
+    z-index: 100;
+}
+
+
+.nav-link.position-relative {
+    position: relative !important;
+    display: inline-block !important;
+}
+
