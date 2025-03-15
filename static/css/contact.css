@@ -53,7 +53,8 @@
 
   .card img {
     margin-bottom: 15px;
-    width: 350px;
+    width: 100%;
+    height: auto;
 
   }
 
@@ -71,7 +72,8 @@
         margin: 0 auto;
     }
     .card img {
-        height: 100px;  
+        width: 60%;
+        height: auto;  
         object-fit: cover;
     }
     .card {
@@ -93,10 +95,15 @@
   }
 
   .card img {
-    height: 350px;
+    width: 60%;
+    height: auto;
     border-radius: 5px;
-
   }
+
+  .card.mb-3 {
+    max-width: 150px;
+  }
+
 
 }
 
@@ -111,9 +118,9 @@
 @media (min-width: 250px) and (max-width: 350px){
 
   .card img {
-    height: 280px;
+    width: 60%;
+    height: auto;
     border-radius: 5px;
   }
-
 
 }
