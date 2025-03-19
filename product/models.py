@@ -18,7 +18,7 @@ class Product(models.Model):
     quantity = models.PositiveIntegerField(default=0)
     image = models.ImageField(upload_to='products_images')
     image2 = models.ImageField(upload_to='products_images')
-    # image3 = models.ImageField(upload_to='size_tables') размерная сетка 
+    image3 = models.ImageField(upload_to='size_tables', blank=True, null=True)
     category = models.ForeignKey(to=ProductCategory, on_delete=models.CASCADE)
     sizes = models.JSONField(default=list, blank=True)
     active = models.BooleanField(default=True)

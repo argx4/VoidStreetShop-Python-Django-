@@ -50,23 +50,43 @@
                   <option value="{{ size }}">{{ size }}</option>
                   {% endfor %}
                 </select>
+                {% if product.image3 %}
                 <button type="button" class="size-guide-btn" data-bs-toggle="modal" data-bs-target="#sizeGuideModal">
                   Розмірна сітка
-              </button>
-              <div class="modal fade" id="sizeGuideModal" tabindex="-1" aria-labelledby="sizeGuideModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-lg">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="sizeGuideModalLabel">Розмірна сітка</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            <img src="#" class="img-fluid" alt="розмірна сітка">
-                        </div>
-                    </div>
+                </button>
+                <div class="modal fade" id="sizeGuideModal" tabindex="-1" aria-labelledby="sizeGuideModalLabel" aria-hidden="true">
+                  <div class="modal-dialog modal-lg">
+                      <div class="modal-content">
+                          <div class="modal-header">
+                              <h5 class="modal-title" id="sizeGuideModalLabel">Розмірна сітка</h5>
+                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body">
+                              <img src="{{ product.image3.url }}" class="img-fluid" alt="розмірна сітка">
+                          </div>
+                      </div>
+                  </div>
                 </div>
-            </div>
+                {% else %}
+                
+                <button type="button" class="size-guide-btn" data-bs-toggle="modal" data-bs-target="#sizeGuideModal">
+                  Розмірна сітка
+                </button>
+                <div class="modal fade" id="sizeGuideModal" tabindex="-1" aria-labelledby="sizeGuideModalLabel" aria-hidden="true">
+                  <div class="modal-dialog modal-lg">
+                      <div class="modal-content">
+                          <div class="modal-header">
+                              <h5 class="modal-title" id="sizeGuideModalLabel">Розмірна сітка</h5>
+                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body">
+                              <h5>Для цього товару відсутня розмірна сітка</h5>
+                          </div>
+                      </div>
+                  </div>
+                </div>
 
+                {% endif %}
               </div>
               <div class="viborrazmera2">
                 <b>
