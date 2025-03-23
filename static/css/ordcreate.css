@@ -216,3 +216,48 @@ form button:hover {
     }
 
 }
+
+
+/* стили для алерта */
+
+.custom-alert-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.custom-alert-box {
+    background: #310a4a; 
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    max-width: 400px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); 
+}
+
+.custom-alert-box p {
+    color: rgb(184, 178, 178); 
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+.custom-alert-box button {
+    background: rgb(184, 178, 178);
+    border: none;
+    padding: 8px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    color: #5d2285;
+}
+
+.custom-alert-box button:active {
+    transform: scale(0.95);
+}
