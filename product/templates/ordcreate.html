@@ -29,7 +29,7 @@
             <p>⚠️ Увага! За замовленням в країни ЄС питайте окремо в нашому Instagram або Telegram⚠️</p>
         </div>
 
-        <form method="POST" id="order-form">
+        <form method="POST" id="order-form" autocomplete="off">
             {% csrf_token %}
             <div class="form-group" hidden>
                 <label for="basket_items">Ваші товари</label>
@@ -55,7 +55,7 @@
 
             <div class="form-group">
                 <label for="phone">Номер телефону</label>
-                <input type="tel" id="phone" name="phone" placeholder="+380xxxxxxxxx" required />
+                <input type="tel" id="phone" name="phone" placeholder="+380xxxxxxxxx" maxlength="13" required />
             </div>
 
             <div class="form-group">
