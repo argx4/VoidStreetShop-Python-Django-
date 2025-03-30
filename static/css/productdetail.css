@@ -217,6 +217,10 @@ select option {
   .size-guide-btn {
     font-size: 1.1rem;
   }
+
+  .viborrazmera2{
+    text-align: center;
+  }
 }
 
 @media (max-width: 575px) {
