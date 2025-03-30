@@ -40,27 +40,27 @@
 
             <div class="form-group">
                 <label for="first_name">Ім'я</label>
-                <input type="text" id="first_name" name="first_name" placeholder="Введіть ім'я" required/>
+                <input type="text" id="first_name" name="first_name" placeholder="Введіть ім'я" maxlength="50" required/>
             </div>
 
             <div class="form-group">
                 <label for="last_name">Прізвище</label>
-                <input type="text" id="last_name" name="last_name" placeholder="Введіть прізвище" required />
+                <input type="text" id="last_name" name="last_name" placeholder="Введіть прізвище" maxlength="50" required />
             </div>
 
             <div class="form-group">
                 <label for="middle_name">По-батькові</label>
-                <input type="text" id="middle_name" name="middle_name" placeholder="Введіть по-батькові" required />
+                <input type="text" id="middle_name" name="middle_name" placeholder="Введіть по-батькові" maxlength="50" required />
             </div>
 
             <div class="form-group">
                 <label for="phone">Номер телефону</label>
-                <input type="tel" id="phone" name="phone" placeholder="+380xxxxxxxxx" maxlength="13" required />
+                <input type="tel" id="phone" name="phone" placeholder="+380xxxxxxxxx" maxlength="13" minlength="13" pattern="\+?[0-9]+" required />
             </div>
 
             <div class="form-group">
                 <label for="nova_poshta">Номер відділення Нової Пошти</label>
-                <input type="text" id="nova_poshta" name="nova_poshta" placeholder="Наприклад: № 25" required />
+                <input type="text" id="nova_poshta" name="nova_poshta" placeholder="Наприклад: № 25" maxlength="50" required />
             </div>
 
             <div class="form-group">
@@ -70,7 +70,7 @@
             
             <div class="form-group">
                 <label for="contacts">Ваш Instagram/Telegram</label>
-                <input type="text" id="contacts" name="contacts" placeholder="Наприклад @user123" required />
+                <input type="text" id="contacts" name="contacts" placeholder="Наприклад @user123" maxlength="50" required />
             </div>
 
             
