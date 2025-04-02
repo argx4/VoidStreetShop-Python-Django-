@@ -11,6 +11,7 @@
 
 {% block content %}
 <main>
+    {% if baskets %}
     <div class="container">
         <h1>Ваше замовлення</h1>
     <div class="products">
@@ -78,8 +79,11 @@
             <b><div class="total_sum">До сплати: {{ total_sum }} ₴</div></b>
             <button class="btn1" type="submit">Оформити замовлення</button>
 
-            
+            {% else %}
 
+            <h1 class="text-center mt-5">Кошик порожній, оформлення замовлення неможливе</h1>
+            
+            {% endif %}
         
             
             
