@@ -45,7 +45,7 @@ document.getElementById('order-form').addEventListener('submit', function(event)
     const form = this;
     const submitButton = form.querySelector('button[type="submit"]');
     submitButton.disabled = true;
-    submitButton.textContent = 'Отправка...';
+    submitButton.textContent = 'Відправка...';
 
     
     showCustomAlert('Замовлення успішно створено! Очікуйте повідомлення менеджера!', function() {
