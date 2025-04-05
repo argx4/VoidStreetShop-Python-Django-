@@ -639,8 +639,8 @@ footer {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(128, 128, 128, 0.7); 
-  color: white;
+  background-color: rgba(18, 1, 31, 0.744); 
+  color: rgb(184, 178, 178);
   font-size: 2em;
   display: flex;
   align-items: center;
