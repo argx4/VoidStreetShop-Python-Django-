@@ -1,8 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // Check if the device is mobile
+    
     const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
     
-    // Only initialize magnifier on non-mobile devices
+    
     if (!isMobile) {
         const carouselInner = document.querySelector(".carousel-inner");
         const magnifier = document.createElement("div");
