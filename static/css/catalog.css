@@ -104,7 +104,7 @@ footer {
   font-size: 1.4rem;
   cursor: pointer;
   padding: 0.3rem;
-  transition: all 0.2s ease;
+  transition:b all 0.2s ease;
   margin-top: -4px;
 }
 
@@ -113,6 +113,21 @@ footer {
 }
 
 .search-toggle-btn:active {
+  transform: scale(0.9);
+}
+
+.search-btn{
+  background: none;
+  border: none;
+  color: #5d2285;
+  font-size: 1.4rem;
+  cursor: pointer;
+  padding: 0.3rem;
+  transition:b all 0.2s ease;
+  margin-top: -4px;
+}
+
+.search-btn:active {
   transform: scale(0.9);
 }
 
