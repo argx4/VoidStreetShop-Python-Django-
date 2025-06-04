@@ -261,11 +261,11 @@ select option {
   }
 
   .carousel-item.active img {
-    height: 380px;
+    height: 330px;
   }
 
   .carousel-item img {
-    height: 380px;
+    height: 330px;
   }
 }
 
@@ -303,7 +303,7 @@ select option {
 
   .carousel-item.active img,
   .carousel-item img {
-    height: 300px;
+    height: 280px;
   }
 }
 
