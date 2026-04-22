@@ -1,10 +1,7 @@
 from Basket.models import Basket
 
 def basket_count(request):
-    """
-    Context processor that adds the total number of items in the basket
-    to the context of all templates.
-    """
+    
     total_quantity = 0
     
     if request.session.session_key:

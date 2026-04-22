@@ -1,3 +1,3 @@
 (function(){
-    emailjs.init("78z7HLwN5lqEtyveG");
+    emailjs.init(""); // тут нужен ключ от emailjs
 })();
